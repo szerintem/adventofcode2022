@@ -1,10 +1,31 @@
 const fs = require('fs')
 
 const day1 = require('./day1')
+const input = fs.readFileSync(__dirname+'/day1.txt', 'utf8')
 
 describe('day1', () => {
-  it('should work with seed data', () => {
-    const data = `1000
+
+  describe('max', () => {
+    it('should work with exmaple seed', () => {
+      expect(day1.max(exampleSeed)).to.eql(24000)
+    })
+    it('should with with puzzle input', function () {
+      expect(day1.max(input)).to.eql(69206)
+    })
+  })
+
+  describe('top3sum', function () {
+    it('should work with example seed', () => {
+      expect(day1.top3sum(exampleSeed)).to.eql(45000)
+    })
+    it('should work with puzzle input', function () {
+      expect(day1.top3sum(input)).to.eql(197400)
+    })
+  })
+
+})
+
+const exampleSeed = `1000
 2000
 3000
 
@@ -18,13 +39,3 @@ describe('day1', () => {
 9000
 
 10000`
-    const result = day1(data)
-    expect(result).to.eql(24000)
-  })
-  it('should with with puzzle input', function () {
-    const data = fs.readFileSync(__dirname+'/day1.seed', 'utf8')
-    const result = day1(data)
-    console.log('result', typeof result, JSON.stringify(result))
-    // 69206
-  })
-})
