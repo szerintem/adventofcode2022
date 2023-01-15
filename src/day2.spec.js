@@ -21,10 +21,10 @@ describe('day2', () => {
     const result = day2(data)
     expect(result).to.eql(45000)
   })
-  // it('should with with puzzle input', function () {
-  //   const data = fs.readFileSync(__dirname+'/day1.seed', 'utf8')
-  //   const result = day1(data)
-  //   console.log('result', typeof result, JSON.stringify(result))
-  //   // 69206
-  // })
+  it('should with with puzzle input', function () {
+    const data = fs.readFileSync(__dirname+'/day1.seed', 'utf8')
+    const result = day2(data)
+    console.log('result', typeof result, JSON.stringify(result))
+    // 197400
+  })
 })
